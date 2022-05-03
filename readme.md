@@ -17,10 +17,15 @@ source <name_of_virtualenv>/bin/activate
 
 Clone repo into directory
 ```bash
-git clone https://github.com/<username>/<repository>
+git clone https://github.com/ikechukwueze/Code-Task.git
 ```
 
-Navigate into project root and run 
+Navigate to project root and install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+Create database tables 
 ```bash
 python manage.py makemigration
 python manage.py migrate
@@ -41,7 +46,7 @@ Start server
 python manage.py runserver
 ```
 
-Open browser and navigate to 
+Open a browser and navigate to 
 ```
 http://localhost:8000/
 ```
