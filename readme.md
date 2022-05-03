@@ -1,7 +1,9 @@
 # Code Task
 
 
-## Project initialization
+## Project initialization (Project running on python 3.8.10)
+
+Install Python 3.8.10
 
 Create a virtual environment in desired directory
 
@@ -27,7 +29,7 @@ pip install -r requirements.txt
 
 Create database tables 
 ```bash
-python manage.py makemigration
+python manage.py makemigrations
 python manage.py migrate
 ```
 
