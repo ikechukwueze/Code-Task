@@ -19,7 +19,7 @@ class ReservationAPIView(generics.ListAPIView):
     def list(self, request):
         query = self.get_queryset().annotate(
             previous_reservation=Subquery(
-                Reservation.objects
+                self.get_queryset()
                 .filter(rental=OuterRef('rental'))
                 .exclude(checkout__gte=OuterRef('checkout'))
                 .order_by('-checkout')
