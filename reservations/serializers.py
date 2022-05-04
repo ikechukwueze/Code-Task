@@ -12,13 +12,7 @@ class ReservationSerializer(serializers.ModelSerializer):
         read_only_fields = ["reservation_id"]
 
     def get_previous_reservation(self, obj):
-        previous_reservation = (
-            Reservation.objects.filter(rental=obj.rental)
-            .exclude(checkout__gte=obj.checkout)
-            .order_by("checkout")
-            .last()
-        )
-
+        previous_reservation = obj.previous_reservation
         if previous_reservation:
-            return previous_reservation.reservation_id
+            return previous_reservation
         return "-"
